@@ -10,7 +10,7 @@ https://github.com/Teimur-KZ/HW_28-03-24-/blob/master/templates/form.html
 при отправке которой будет создан cookie-файл с данными пользователя, а также 
 будет произведено перенаправление на страницу приветствия:
 
-[templates/form.html] https://github.com/Teimur-KZ/HW_28-03-24-/blob/master/templates/lk.html
+https://github.com/Teimur-KZ/HW_28-03-24-/blob/master/templates/lk.html
 
 где будет отображаться имя пользователя.
 На странице приветствия должна быть кнопка «Выйти», при нажатии на которую 
