@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    <table class="table table-striped">
+        <tr>
+            <td>Ввидите Имя</td>
+            <td><input type="text" name="username" placeholder="Имя"></td>
+        </tr>
+        <tr>
+            <td>Ввидите E-mail</td>
+            <td><input type="text" name="e-mail" placeholder="E-mail"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Отправить"></td>
+        </tr>
+    </table>
+
+</form>
+{% endblock %}
