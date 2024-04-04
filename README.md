@@ -16,6 +16,9 @@ https://github.com/Teimur-KZ/HW_28-03-24-/blob/master/templates/form.html
 Основа Интернет магазина из задания Урока 1.
 
 функции написаны:
+
 def user_lk():
+
 def login():
+
 def logout():
