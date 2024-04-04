@@ -1,4 +1,4 @@
-from flask import Flask, session, redirect, url_for, request, render_template
+from flask import Flask, session, redirect, url_for, request, render_template, flash
 
 app = Flask(__name__) # создание объекта приложения
 app.secret_key = '76fa5b0ec1841105a24b3de3c66e3a49e26dea0a2bcedcff143fc7cc733d500f'
@@ -27,10 +27,6 @@ def contacts():
 
 
 
-
-
-
-
 # Домашнее задание Урок 2. Погружение во Flask 28.03.24 начало:-------------------------------------
 
 @app.route('/user_lk/')
@@ -40,16 +36,16 @@ def user_lk():
         return render_template('lk.html', **context)
     return redirect(url_for('login'))
 
-
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
-    # если метод запроса POST
     if request.method == 'POST':
-        # устанавливаем значение в словаре session
-        session['username'] = request.form.get('username') or 'Гость'
-        # перенаправляем на странницу приветствия пользователя
+        username = request.form.get('username')
+        email = request.form.get('email')
+        if not username or not email:
+            flash('Введите имя и email', 'danger')
+            return redirect(url_for('login'))
+        session['username'] = username
         return redirect(url_for('user_lk'))
-    # если метод запроса GET
     return render_template('form.html')
 
 '''
@@ -64,9 +60,6 @@ def logout():
     return redirect(url_for('login'))
 
 # Домашнее задание Урок 2. Погружение во Flask 28.03.24 конец:-------------------------------------
-
-
-
 
 
 
